@@ -129,8 +129,8 @@ if selected_ports and not filtered_df.empty:
         
         st.plotly_chart(bubble_chart)
 
-        # # Show filtered data as a table
-        # st.write('Filtered Data Table', filtered_df)
+        # Show filtered data as a table
+        st.write('Filtered Data Table', filtered_df)
     else:
         st.warning("No valid data available for the selected ports and period.")
 else:
@@ -157,8 +157,8 @@ if not seasonal_filtered_df.empty:
                                 title=f'Total Seasonal Container Throughput')
     st.plotly_chart(seasonal_pie_chart)
 
-    # # Show seasonal filtered data as a table
-    # st.write('Filtered Seasonal Data Table', seasonal_filtered_df)
+    # Show seasonal filtered data as a table
+    st.write('Filtered Seasonal Data Table', seasonal_filtered_df)
 else:
     st.write("Please select at least one port for seasonal analysis.")
 
