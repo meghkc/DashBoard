@@ -4,7 +4,7 @@ import plotly.express as px
 import json
 
 # File path to the JSON dataset
-file_path = r'C:\Users\mkc\OneDrive - NREL\Reference\Containerization\port_dataset.json'
+file_path = '../Data/port_dataset.json'
 
 # Load JSON data
 with open(file_path, 'r') as file:
