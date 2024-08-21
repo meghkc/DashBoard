@@ -4,10 +4,10 @@ import plotly.express as px
 import json
 import os
 
-# Get the absolute path to the file based on the root directory
-current_dir = os.path.dirname(os.path.abspath(__file__))  # Get the directory of the current script
-root_dir = os.path.abspath(os.path.join(current_dir, ".."))  # Go one level up to the root directory
-file_path = os.path.join(root_dir, 'Data', 'port_dataset.json')
+# # Get the absolute path to the file based on the root directory
+# current_dir = os.path.dirname(os.path.abspath(__file__))  # Get the directory of the current script
+# root_dir = os.path.abspath(os.path.join(current_dir, ".."))  # Go one level up to the root directory
+# file_path = os.path.join(root_dir, 'Data', 'port_dataset.json')
 
 # File path to the JSON dataset
 file_path = '../Data/port_dataset.json'
