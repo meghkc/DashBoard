@@ -2,13 +2,16 @@ import streamlit as st
 import pandas as pd
 import plotly.express as px
 import json
+import os
 
 # File path to the JSON dataset
 file_path = '../Data/port_dataset.json'
 
-# Load JSON data
-with open(file_path, 'r') as file:
-    parsed_data = json.load(file)
+if not os.path.exists(file_path):
+    st.error(f"File not found: {file_path}. Please check the file path and ensure the file is available.")
+else:
+    with open(file_path, 'r') as file:
+        parsed_data = json.load(file)
 
 # Convert to DataFrame
 df = pd.DataFrame(parsed_data)
