@@ -1,3 +1,9 @@
+####### Author: Megh KC ##########
+##### Script made for Interactive Seasonal Freight Data Visualization #########
+##### Created Date: 08/21/2024 #######
+##### Dashboard Creation using streamlit ##########
+
+
 import streamlit as st
 import pandas as pd
 import matplotlib.pyplot as plt
