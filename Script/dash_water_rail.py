@@ -135,6 +135,35 @@ if dashboard == "Rail Dashboard":
     else:
         st.dataframe(total_carloads_by_month)
 
+    # Seasonal Containers only
+    df_containers = filtered_df[filtered_df['Commodity']=='Containers']
+    # Calculate total carloads by season & containers only for the pie chart
+    total_carloads_by_season_con = df_containers.groupby('Season').agg({'Carloads': 'sum'})
+    st.subheader('Container only Total Carloads by Season')
+    option = st.radio("View", ("Chart", "Data"), key="Container_season_pie")
+    # Plot the pie chart for total carloads by season for container only
+    if option=="Chart":
+        fig,ax=plt.subplots()
+        ax.pie(total_carloads_by_season_con['Carloads'], labels=total_carloads_by_season_con.index,autopct='%1.1f%%')
+        ax.set_title('Container only Total Carloads by Season')
+        st.pyplot(fig)
+    else:
+        st.dataframe(total_carloads_by_season_con)
+
+    # Monthly Containers only
+    # Calculate total carloads by month & containers only for the pie chart
+    total_carloads_by_month_con = df_containers.groupby('Month').agg({'Carloads': 'sum'})
+    st.subheader('Container only Total Carloads by Month')
+    option = st.radio("View", ("Chart", "Data"), key="Container_month_pie")
+    # Plot the pie chart for total carloads by month for container only
+    if option=="Chart":
+        fig,ax=plt.subplots()
+        ax.pie(total_carloads_by_month_con['Carloads'], labels=total_carloads_by_month_con.index,autopct='%1.1f%%')
+        ax.set_title('Container only Total Carloads by Month')
+        st.pyplot(fig)
+    else:
+        st.dataframe(total_carloads_by_month_con)
+
 # Water Dashboard
 elif dashboard == "Water Dashboard":
     # Load the Water dataset
