@@ -163,6 +163,8 @@ if dashboard == "Rail Dashboard":
         st.pyplot(fig)
     else:
         st.dataframe(total_carloads_by_month_con)
+    # Data source information
+    st.write("Data Source: [USDA Agricultural Transportation](https://agtransport.usda.gov/stories/s/appm-bhti)")
 
 # Water Dashboard
 elif dashboard == "Water Dashboard":
@@ -317,3 +319,5 @@ elif dashboard == "Water Dashboard":
         st.write('Filtered Seasonal Data Table', seasonal_filtered_df)
     else:
         st.write("Please select at least one port for seasonal analysis.")
+    # Data source information
+    st.write("Data Source: included port websites")
