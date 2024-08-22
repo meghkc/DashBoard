@@ -3,7 +3,6 @@
 ##### Created Date: 08/21/2024 #######
 ##### Dashboard Creation using streamlit ##########
 
-
 import streamlit as st
 import pandas as pd
 import matplotlib.pyplot as plt
@@ -17,7 +16,7 @@ dashboard = st.sidebar.radio("Select Dashboard", ("Rail Dashboard", "Water Dashb
 # Rail Dashboard
 if dashboard == "Rail Dashboard":
     # Load the Rail dataset
-    df = pd.read_csv('../Data/Rail_Carloadings_originated.csv')
+    df = pd.read_csv('Rail_Carloadings_originated.csv')
 
     # Convert the 'Date' column to datetime format
     df['Date'] = pd.to_datetime(df['Date'])
@@ -69,6 +68,16 @@ if dashboard == "Rail Dashboard":
     # Display the filtered data charts
     st.header('Filtered Data Visualizations')
 
+    # Group by Year and Month, then plot bar chart
+    monthly_totals_year = filtered_df.groupby(['Year', 'Month']).agg({'Carloads': 'sum'}).reset_index()
+    pivot_df_year = monthly_totals_year.pivot(index='Year', columns='Month', values='Carloads').fillna(0)
+    st.subheader('Total Carloads by Year and Month')
+    option = st.radio("View", ("Chart", "Data"), key="year_month")
+    if option == "Chart":
+        st.bar_chart(pivot_df_year)
+    else:
+        st.dataframe(pivot_df_year)
+
     # Group by Year and Season, then plot bar chart
     seasonal_totals_year = filtered_df.groupby(['Year', 'Season']).agg({'Carloads': 'sum'}).reset_index()
     pivot_df_year = seasonal_totals_year.pivot(index='Year', columns='Season', values='Carloads').fillna(0)
@@ -80,6 +89,16 @@ if dashboard == "Rail Dashboard":
     else:
         st.dataframe(pivot_df_year)
 
+    # Calculate percentage of carloads by Year and Season and plot stacked bar chart
+    pivot_df_year_percent = pivot_df_year.div(pivot_df_year.sum(axis=1), axis=0) * 100
+
+    st.subheader('Percentage of Carloads by Year and Season')
+    option = st.radio("View", ("Chart", "Data"), key="year_season_percent")
+    if option == "Chart":
+        st.bar_chart(pivot_df_year_percent)
+    else:
+        st.dataframe(pivot_df_year_percent)
+
     # Group by Railroad and Season, then plot bar chart
     seasonal_totals_rr = filtered_df.groupby(['Railroad', 'Season']).agg({'Carloads': 'sum'}).reset_index()
     pivot_df_rr = seasonal_totals_rr.pivot(index='Railroad', columns='Season', values='Carloads').fillna(0)
@@ -90,16 +109,6 @@ if dashboard == "Rail Dashboard":
         st.bar_chart(pivot_df_rr)
     else:
         st.dataframe(pivot_df_rr)
-
-    # Calculate percentage of carloads by Year and Season and plot stacked bar chart
-    pivot_df_year_percent = pivot_df_year.div(pivot_df_year.sum(axis=1), axis=0) * 100
-
-    st.subheader('Percentage of Carloads by Year and Season')
-    option = st.radio("View", ("Chart", "Data"), key="year_season_percent")
-    if option == "Chart":
-        st.bar_chart(pivot_df_year_percent)
-    else:
-        st.dataframe(pivot_df_year_percent)
 
     # Plot pie chart for total carloads by season
     total_carloads_by_season = filtered_df.groupby('Season').agg({'Carloads': 'sum'})
@@ -113,12 +122,24 @@ if dashboard == "Rail Dashboard":
         st.pyplot(fig)
     else:
         st.dataframe(total_carloads_by_season)
+    
+    # Plot pie chart for total carloads by month
+    total_carloads_by_month = filtered_df.groupby('Month').agg({'Carloads': 'sum'})
+    st.subheader('Total Carloads by Month')
+    option = st.radio("View", ("Chart", "Data"), key="month_pie")
+    if option == "Chart":
+        fig, ax = plt.subplots()
+        ax.pie(total_carloads_by_month['Carloads'], labels=total_carloads_by_month.index, autopct='%1.1f%%')
+        ax.set_title('Total Carloads by Month')
+        st.pyplot(fig)
+    else:
+        st.dataframe(total_carloads_by_month)
 
 # Water Dashboard
 elif dashboard == "Water Dashboard":
     # Load the Water dataset
     # File path to the JSON dataset
-    file_path = '../Data/port_dataset.json'
+    file_path = 'port_dataset.json'
 
     # Load JSON data
     with open(file_path, 'r') as file:
