@@ -1,5 +1,5 @@
 ####### Author: Megh KC ##########
-##### Script made for Interactive Seasonal Freight Data Visualization #########
+##### Script made for Interactive Seasonal Freight Data Visualization Dashboard #########
 ##### Created Date: 08/21/2024 #######
 ##### Dashboard Creation using streamlit ##########
 
