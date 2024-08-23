@@ -43,6 +43,9 @@ if dashboard == "Rail Dashboard":
     # Filter the data based on selections
     filtered_df = df[(df['Year'].isin(selected_years)) & (df['Railroad'].isin(selected_railroads))]
 
+    st.write('Dashboard Author : Megh KC')
+    st.write('We are analyzing the Freight transportation around US through Rail mode for the consecutive 7 years')
+    
     # Overall trend line chart for carloads by railroad over time
     st.header('Trend of Carloads Over Time by Railroad')
     date_totals_rr = df.groupby(['Date', 'Railroad']).agg({'Carloads': 'sum'}).reset_index()
