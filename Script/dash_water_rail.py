@@ -16,7 +16,7 @@ dashboard = st.sidebar.radio("Select Dashboard", ("Rail Dashboard", "Water Dashb
 # Rail Dashboard
 if dashboard == "Rail Dashboard":
     # Load the Rail dataset
-    df = pd.read_csv('../../Data/Rail_Carloadings_originated.csv')
+    df = pd.read_csv('../../Data/main/Rail_Carloadings_originated.csv')
 
     # Convert the 'Date' column to datetime format
     df['Date'] = pd.to_datetime(df['Date'])
@@ -174,7 +174,7 @@ if dashboard == "Rail Dashboard":
 elif dashboard == "Water Dashboard":
     # Load the Water dataset
     # File path to the JSON dataset
-    file_path = '../../Data/port_dataset.json'
+    file_path = '../../Data/main/port_dataset.json'
 
     # Load JSON data
     with open(file_path, 'r') as file:
