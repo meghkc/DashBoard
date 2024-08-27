@@ -3,3 +3,4 @@ Dynamic visualization of US container Port Freight Transport activity for the 7 
 ### Instructions
 1. clone the repo
 2. run the code (streamlit run file.py) in your terminal
+#### you will see the visualized dashboard in your browser with local weblink
