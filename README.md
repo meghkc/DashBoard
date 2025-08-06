@@ -1,5 +1,14 @@
 # 🚛 Advanced US Freight Analytics Dashboard
 
+[![PyPI version](https://badge.fury.io/py/freight-analytics-dashboard.svg)](https://badge.fury.io/py/freight-analytics-dashboard)
+[![PyPI downloads](https://img.shields.io/pypi/dm/freight-analytics-dashboard)](https://pypi.org/project/freight-analytics-dashboard/)
+[![Python versions](https://img.shields.io/pypi/pyversions/freight-analytics-dashboard)](https://pypi.org/project/freight-analytics-dashboard/)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![GitHub stars](https://img.shields.io/github/stars/meghkc/DashBoard)](https://github.com/meghkc/DashBoard/stargazers)
+[![GitHub forks](https://img.shields.io/github/forks/meghkc/DashBoard)](https://github.com/meghkc/DashBoard/network)
+[![GitHub issues](https://img.shields.io/github/issues/meghkc/DashBoard)](https://github.com/meghkc/DashBoard/issues)
+[![Streamlit App](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://meghkc-dashboard-freight-analysis.streamlit.app/)
+
 ## 🎯 Overview
 An interactive, data-driven dashboard for comprehensive analysis of US freight transportation patterns across rail and port modes. This enhanced visualization platform provides deep insights into seasonal trends, performance metrics, and predictive analytics for freight transportation.
 
