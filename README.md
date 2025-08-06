@@ -161,7 +161,6 @@ scikit-learn >= 1.1.0
 seaborn >= 0.11.0
 numpy >= 1.21.0
 
-```
 
 ## 📈 Performance Metrics
 
