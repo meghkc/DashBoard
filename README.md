@@ -110,7 +110,7 @@ freight-dashboard --help
 ```
 
 ### 🌐 **Live Demo**
-**[View Live Dashboard on Streamlit Cloud](https://share.streamlit.io/meghkc/dashboard)** 🔗
+**[View Live Dashboard on Streamlit Cloud](https://meghkc-dashboard-freight-analysis.streamlit.app/)** 🔗
 
 ### 💻 **Local Development**
 

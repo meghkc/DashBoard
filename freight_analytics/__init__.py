@@ -7,7 +7,7 @@ visualizations and insights for rail and port data across the United States.
 
 __version__ = "1.0.0"
 __author__ = "Megh KC"
-__email__ = "megh.kc@example.com"  # Update with your actual email
+__email__ = "kc.megh2048@gmail.com"
 __description__ = "Advanced US Freight Analytics Dashboard with Interactive Visualizations"
 
 # Import main classes when available

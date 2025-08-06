@@ -18,7 +18,7 @@ setup(
     name="freight-analytics-dashboard",
     version="1.0.0",
     author="Megh KC",
-    author_email="megh.kc@example.com",  # Update with your email
+    author_email="kc.megh2048@gmail.com",
     description="Advanced US Freight Analytics Dashboard with Interactive Visualizations",
     long_description=read_readme(),
     long_description_content_type="text/markdown",
@@ -72,6 +72,6 @@ setup(
         "Bug Reports": "https://github.com/meghkc/DashBoard/issues",
         "Source": "https://github.com/meghkc/DashBoard",
         "Documentation": "https://github.com/meghkc/DashBoard/blob/main/README.md",
-        "Live Demo": "https://dashboard-meghkc-freight-analysis.streamlit.app/",
+        "Live Demo": "https://meghkc-dashboard-freight-analysis.streamlit.app/",
     },
 )

@@ -199,7 +199,7 @@ with open('seasonal_analysis.json', 'w') as f:
 
 - **Documentation**: [GitHub README](https://github.com/meghkc/DashBoard)
 - **Issues**: [GitHub Issues](https://github.com/meghkc/DashBoard/issues)
-- **Live Demo**: [Streamlit Cloud](https://dashboard-meghkc-freight-analysis.streamlit.app/)
+- **Live Demo**: [Streamlit Cloud](https://meghkc-dashboard-freight-analysis.streamlit.app/)
 
 ---
 
