@@ -152,7 +152,7 @@ streamlit run Script/enhanced_dashboard.py
 - Internet connection for maps
 
 ### **Dependencies**
-```
+
 streamlit >= 1.48.0
 pandas >= 1.5.0
 plotly >= 5.0.0
