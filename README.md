@@ -133,9 +133,11 @@ streamlit run streamlit_app.py
 
 ### **☁️ Cloud Deployment**
 ```bash
+
 - **Streamlit Cloud**: Fork repo → Connect GitHub → Deploy
 - **Heroku/Railway/Render**: Direct deployment support
 - **Docker**: `docker build -t freight-dashboard .`
+
 ```
 ```bash
 ## 📊 Data Sources & Specifications
