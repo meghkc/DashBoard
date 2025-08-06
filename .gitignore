@@ -31,3 +31,24 @@
 # not include output of scripts after running
 *.pyc
 __pycache__/
+
+# Private presentation and personal notes
+PRESENTATION_HIGHLIGHTS.md
+*_NOTES.md
+*_PERSONAL.md
+
+# Test files and development artifacts
+test_dashboard.py
+*_test.py
+*_backup.py
+
+# Runtime and cache files
+*.log
+.streamlit/
+__pycache__/
+.pytest_cache/
+
+# Environment and configuration
+.env
+.env.local
+config_personal.py
