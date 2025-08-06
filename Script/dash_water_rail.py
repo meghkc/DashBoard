@@ -10,8 +10,6 @@ import matplotlib.pyplot as plt
 import plotly.express as px
 import plotly.graph_objects as go
 from plotly.subplots import make_subplots
-import plotly.figure_factory as ff
-import seaborn as sns
 import json
 from datetime import datetime, timedelta
 import warnings
@@ -185,20 +183,27 @@ def create_advanced_time_series(data, x_col, y_col, color_col, title):
                          '<extra></extra>'
         ))
     
-    # Add trend line
-    from scipy import stats
-    x_numeric = pd.to_numeric(data[x_col])
-    slope, intercept, r_value, p_value, std_err = stats.linregress(x_numeric, data[y_col])
-    line = slope * x_numeric + intercept
-    
-    fig.add_trace(go.Scatter(
-        x=data[x_col],
-        y=line,
-        mode='lines',
-        name='Trend',
-        line=dict(color='red', width=2, dash='dash'),
-        hovertemplate=f'Trend Line<br>R² = {r_value**2:.3f}<extra></extra>'
-    ))
+    # Add trend line with error handling
+    try:
+        from scipy import stats
+        x_numeric = pd.to_numeric(data[x_col])
+        slope, intercept, r_value, p_value, std_err = stats.linregress(x_numeric, data[y_col])
+        line = slope * x_numeric + intercept
+        
+        fig.add_trace(go.Scatter(
+            x=data[x_col],
+            y=line,
+            mode='lines',
+            name='Trend',
+            line=dict(color='red', width=2, dash='dash'),
+            hovertemplate=f'Trend Line<br>R² = {r_value**2:.3f}<extra></extra>'
+        ))
+    except ImportError:
+        # Skip trend line if scipy is not available
+        pass
+    except Exception:
+        # Skip trend line if there's any calculation error
+        pass
     
     fig.update_layout(
         title=dict(text=title, font=dict(size=20, color='#1f4e79')),

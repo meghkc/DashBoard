@@ -1,14 +1,6 @@
-streamlit
-pandas
-plotly
-matplotlib
-folium
-streamlit-folium
-plotly.graph_objects
-seaborn
-scipy
-scikit-learn
-numpy
-altair
-pydeck
+streamlit>=1.28.0
+pandas>=1.5.0
+plotly>=5.0.0
+matplotlib>=3.5.0
+numpy>=1.21.0
 
