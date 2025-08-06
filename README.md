@@ -29,41 +29,35 @@ An interactive, data-driven dashboard for comprehensive analysis of US freight t
 - Growth rate analysis with year-over-year comparisons
 - Capacity utilization indicators
 
-### 🔍 **Data Intelligence**
-- Automated anomaly detection
-- Statistical insights and summaries
-- Performance benchmarking
-- Custom filtering and cross-filtering
-
 ## 📂 Project Structure
 
 ```
 DashBoard/
-├── 📱 streamlit_app.py          # Main dashboard application (Streamlit Cloud ready)
-├── 📋 requirements.txt          # Python dependencies 
-├── 📖 README.md                 # Project documentation
-├── 📜 LICENSE                   # MIT License
-├── 🔧 .gitignore               # Git ignore rules
-├── 🛠️ setup.py                 # Automated setup script
-├── 📝 CHANGELOG.md             # Version history and updates
-├── 🤝 CONTRIBUTING.md          # Contribution guidelines  
-├── 🔐 SECURITY.md              # Security policy and reporting
-├── 🚀 run_dashboard.bat        # Windows launcher script
-├── 📊 Data/                    # Dataset files
-│   ├── Rail_Carloadings_originated.csv    # Rail freight data (124K+ records)
-│   └── port_dataset.json                  # Port container data (78 records)
-├── 📁 Script/                  # Development and legacy versions
-│   ├── enhanced_dashboard.py              # Enhanced development version
-│   ├── dash_water_rail.py                # Original dashboard  
-│   └── test_dashboard.py                 # Testing utilities
-├── ⚙️ .vscode/                 # VS Code configuration
-├── 🐳 .devcontainer/          # Development container setup
-└── 🔄 .github/                # GitHub Actions and templates
+├── 📱 streamlit_app.py          
+├── 📋 requirements.txt           
+├── 📖 README.md                 
+├── 📜 LICENSE                  
+├── 🔧 .gitignore            
+├── 🛠️ setup.py                 
+├── 📝 CHANGELOG.md             
+├── 🤝 CONTRIBUTING.md          
+├── 🔐 SECURITY.md              
+├── 🚀 run_dashboard.bat        
+├── 📊 Data/                    
+│   ├── Rail_Carloadings_originated.csv    
+│   └── port_dataset.json                  
+├── 📁 Script/                  
+│   ├── enhanced_dashboard.py              
+│   ├── dash_water_rail.py                
+│   └── test_dashboard.py               
+├── ⚙️ .vscode/                
+├── 🐳 .devcontainer/         
+└── 🔄 .github/                
     ├── workflows/
-    │   └── ci.yml              # Continuous Integration
+    │   └── ci.yml             
     └── ISSUE_TEMPLATE/
-        ├── bug_report.yml      # Bug report template
-        └── feature_request.yml # Feature request template
+        ├── bug_report.yml      
+        └── feature_request.yml 
 ```
 
 ## 🎨 Dashboard Sections
@@ -98,15 +92,7 @@ DashBoard/
 - **Pandas**
 - **NumPy**
 
-### **Professional Styling**
-- Custom CSS with gradient backgrounds
-- Responsive metric cards
-- Color-coded insights and alerts
-
 ## 🚀 Quick Start
-
-### 🌐 **Live Demo**
-**[View Live Dashboard on Streamlit Cloud](https://share.streamlit.io/meghkc/dashboard)** 🔗
 
 ### **Option 1: Automated Setup (Recommended)**
 ```bash
@@ -156,14 +142,11 @@ streamlit run streamlit_app.py
 
 ### **Rail Dataset**
 - **Source**: USDA Agricultural Transportation
-- **Records**: 124,293 entries
 - **Timespan**: 2017-2023 (7 years)
-- **Granularity**: Weekly data
 - **Key Metrics**: Carloads by railroad, commodity, and time
 
 ### **Port Dataset**
 - **Source**: Individual port authority websites
-- **Records**: 78 monthly entries
 - **Coverage**: 9 major US container ports
 - **Timespan**: 2018-2024
 - **Key Metrics**: TEU (Twenty-foot Equivalent Units)
@@ -204,15 +187,6 @@ scipy >= 1.9.0
 scikit-learn >= 1.1.0
 seaborn >= 0.11.0
 numpy >= 1.21.0
-
-
-## 📈 Performance Metrics
-
-### **Dashboard Load Time**: < 3 seconds
-### **Data Processing**: Cached for optimal performance
-### **Responsiveness**: Mobile and desktop optimized
-### **Scalability**: Handles 100K+ records efficiently
-
 
 ## 🔗 Links & Resources
 
