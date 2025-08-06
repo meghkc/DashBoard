@@ -9,6 +9,7 @@ import matplotlib.pyplot as plt
 import plotly.express as px
 import plotly.graph_objects as go
 import json
+import os
 from datetime import datetime
 import warnings
 warnings.filterwarnings('ignore')
@@ -66,7 +67,30 @@ st.markdown("""
 def load_rail_data():
     """Load and preprocess rail data with caching"""
     try:
-        df = pd.read_csv('Data/Rail_Carloadings_originated.csv')
+        # Try multiple possible paths
+        possible_paths = [
+            'Data/Rail_Carloadings_originated.csv',
+            './Data/Rail_Carloadings_originated.csv',
+            'Rail_Carloadings_originated.csv'
+        ]
+        
+        df = None
+        for path in possible_paths:
+            if os.path.exists(path):
+                df = pd.read_csv(path)
+                break
+        
+        if df is None:
+            # Debug: show current directory and available files
+            current_dir = os.getcwd()
+            files = os.listdir('.')
+            st.error(f"Rail data file not found. Current directory: {current_dir}")
+            st.error(f"Available files: {files}")
+            if os.path.exists('Data'):
+                data_files = os.listdir('Data')
+                st.error(f"Files in Data folder: {data_files}")
+            return pd.DataFrame()
+        
         df['Date'] = pd.to_datetime(df['Date'])
         df['Season'] = df['Month'].apply(get_season)
         return df
@@ -78,8 +102,30 @@ def load_rail_data():
 def load_port_data():
     """Load and preprocess port data with caching"""
     try:
-        with open('Data/port_dataset.json', 'r') as file:
-            parsed_data = json.load(file)
+        # Try multiple possible paths
+        possible_paths = [
+            'Data/port_dataset.json',
+            './Data/port_dataset.json',
+            'port_dataset.json'
+        ]
+        
+        parsed_data = None
+        for path in possible_paths:
+            if os.path.exists(path):
+                with open(path, 'r') as file:
+                    parsed_data = json.load(file)
+                break
+        
+        if parsed_data is None:
+            # Debug: show current directory and available files
+            current_dir = os.getcwd()
+            files = os.listdir('.')
+            st.error(f"Port data file not found. Current directory: {current_dir}")
+            st.error(f"Available files: {files}")
+            if os.path.exists('Data'):
+                data_files = os.listdir('Data')
+                st.error(f"Files in Data folder: {data_files}")
+            return pd.DataFrame()
         
         df = pd.DataFrame(parsed_data)
         df_melted = df.melt(id_vars=["port"], var_name="port_name", value_name="TEU_values")
