@@ -94,27 +94,40 @@ DashBoard/
 
 ## 🚀 Quick Start
 
-### **Option 1: Automated Setup (Recommended)**
+### 📦 **Package Installation (Recommended)**
+```bash
+# Install from PyPI (when published)
+pip install freight-analytics-dashboard
+
+# Launch dashboard immediately  
+freight-dashboard
+
+# Custom configuration
+freight-dashboard --port 8502 --host 0.0.0.0
+
+# Get help
+freight-dashboard --help
+```
+
+### 🌐 **Live Demo**
+**[View Live Dashboard on Streamlit Cloud](https://share.streamlit.io/meghkc/dashboard)** 🔗
+
+### 💻 **Local Development**
+
+#### **Option 1: From Package Source**
 ```bash
 # Clone the repository
 git clone https://github.com/meghkc/DashBoard.git
 cd DashBoard
 
-# Run automated setup
-python setup.py
+# Install in development mode
+pip install -e .
 
-# Launch dashboard (auto-generated launcher)
-# Windows: launch_dashboard.bat
-# Linux/Mac: ./launch_dashboard.sh
+# Launch via CLI
+freight-dashboard
 ```
 
-### **Option 2: Easy Launch (Windows)**
-```bash
-# Double-click the launcher
-run_dashboard.bat
-```
-
-### **Option 3: Manual Setup**
+#### **Option 2: Direct Streamlit**
 ```bash
 # Clone and navigate
 git clone https://github.com/meghkc/DashBoard.git
@@ -131,14 +144,26 @@ pip install -r requirements.txt
 streamlit run streamlit_app.py
 ```
 
-### **☁️ Cloud Deployment**
+#### **Option 3: One-Click Launch (Windows)**
 ```bash
-
-- **Streamlit Cloud**: Fork repo → Connect GitHub → Deploy
-- **Heroku/Railway/Render**: Direct deployment support
-- **Docker**: `docker build -t freight-dashboard .`
-
+# Double-click the launcher
+run_dashboard.bat
 ```
+
+### 🐳 **Container Deployment**
+```bash
+# Docker
+docker build -t freight-dashboard .
+docker run -p 8501:8501 freight-dashboard
+
+# Or use pre-built image (when available)
+docker run -p 8501:8501 meghkc/freight-analytics-dashboard
+```
+
+### ☁️ **Cloud Deployment**
+- **Streamlit Cloud**: Fork repo → Connect GitHub → Deploy
+- **Heroku/Railway/Render**: Direct deployment support via `Procfile`
+- **Any Python hosting**: Install package and run `freight-dashboard`
 ```bash
 ## 📊 Data Sources & Specifications
 
