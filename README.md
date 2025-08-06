@@ -39,15 +39,31 @@ An interactive, data-driven dashboard for comprehensive analysis of US freight t
 
 ```
 DashBoard/
-├── README.md                    
-├── requirements.txt             
-├── run_dashboard.bat           
-├── Data/
-│   ├── Rail_Carloadings_originated.csv    
-│   └── port_dataset.json                  
-└── Script/
-    ├── enhanced_dashboard.py              
-    ├── dash_water_rail.py                                  
+├── 📱 streamlit_app.py          # Main dashboard application (Streamlit Cloud ready)
+├── 📋 requirements.txt          # Python dependencies 
+├── 📖 README.md                 # Project documentation
+├── 📜 LICENSE                   # MIT License
+├── 🔧 .gitignore               # Git ignore rules
+├── 🛠️ setup.py                 # Automated setup script
+├── 📝 CHANGELOG.md             # Version history and updates
+├── 🤝 CONTRIBUTING.md          # Contribution guidelines  
+├── 🔐 SECURITY.md              # Security policy and reporting
+├── 🚀 run_dashboard.bat        # Windows launcher script
+├── 📊 Data/                    # Dataset files
+│   ├── Rail_Carloadings_originated.csv    # Rail freight data (124K+ records)
+│   └── port_dataset.json                  # Port container data (78 records)
+├── 📁 Script/                  # Development and legacy versions
+│   ├── enhanced_dashboard.py              # Enhanced development version
+│   ├── dash_water_rail.py                # Original dashboard  
+│   └── test_dashboard.py                 # Testing utilities
+├── ⚙️ .vscode/                 # VS Code configuration
+├── 🐳 .devcontainer/          # Development container setup
+└── 🔄 .github/                # GitHub Actions and templates
+    ├── workflows/
+    │   └── ci.yml              # Continuous Integration
+    └── ISSUE_TEMPLATE/
+        ├── bug_report.yml      # Bug report template
+        └── feature_request.yml # Feature request template
 ```
 
 ## 🎨 Dashboard Sections
@@ -89,22 +105,50 @@ DashBoard/
 
 ## 🚀 Quick Start
 
-### **Option 1: Easy Launch**
+### 🌐 **Live Demo**
+**[View Live Dashboard on Streamlit Cloud](https://share.streamlit.io/meghkc/dashboard)** 🔗
+
+### **Option 1: Automated Setup (Recommended)**
+```bash
+# Clone the repository
+git clone https://github.com/meghkc/DashBoard.git
+cd DashBoard
+
+# Run automated setup
+python setup.py
+
+# Launch dashboard (auto-generated launcher)
+# Windows: launch_dashboard.bat
+# Linux/Mac: ./launch_dashboard.sh
+```
+
+### **Option 2: Easy Launch (Windows)**
 ```bash
 # Double-click the launcher
 run_dashboard.bat
 ```
 
-### **Option 2: Command Line**
+### **Option 3: Manual Setup**
 ```bash
-# Navigate to project directory
+# Clone and navigate
+git clone https://github.com/meghkc/DashBoard.git
+cd DashBoard
+
+# Create virtual environment (recommended)
+python -m venv venv
+source venv/bin/activate  # Windows: venv\Scripts\activate
 
 # Install dependencies
 pip install -r requirements.txt
 
-# Run the enhanced dashboard
-streamlit run Script/enhanced_dashboard.py
+# Run the main dashboard (Streamlit Cloud compatible)
+streamlit run streamlit_app.py
 ```
+
+### **☁️ Cloud Deployment**
+- **Streamlit Cloud**: Fork repo → Connect GitHub → Deploy
+- **Heroku/Railway/Render**: Direct deployment support
+- **Docker**: `docker build -t freight-dashboard .`
 
 ```
 
